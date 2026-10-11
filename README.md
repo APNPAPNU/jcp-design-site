@@ -1,6 +1,6 @@
 # JCP Graphic Design: portfolio website
 
-One-page portfolio site for **Jonathan Pettit / JCP Graphic Design**, a freelance graphic designer in Niagara Falls, NY, serving Buffalo and Western New York.
+One-page portfolio site for **Jonathan Pettit / JCP Graphic Design**, an affordable freelance graphic designer for small businesses, based in Niagara Falls, NY and working with clients anywhere in the US and beyond (everything is done online).
 
 - **Live site:** https://apnpapnu.github.io/jcp-design-site/
 - **Built with:** plain HTML, CSS and a little vanilla JavaScript. No build step, no frameworks, no paid services.
@@ -46,7 +46,7 @@ You can do every change below right in your browser:
 
 ## Swap in your portfolio images (step by step)
 
-**Right now** the gallery shows 6 **concept projects** for *fictional* local businesses (Brew & Falls Coffee, Ironwood Slice Co., Gorge & Grain Barber Co., Sugar Mist Bakery, Cobalt Canal Brewing, Northbank Landscape Co.). Each one is clearly tagged "Concept project" on the card and in the lightbox, and the section intro says client work is coming soon. Swap them out for real client work as you get it.
+**Right now** the gallery shows 6 **concept projects** for *fictional* businesses (Brew & Falls Coffee, Ironwood Slice Co., Gorge & Grain Barber Co., Sugar Mist Bakery, Cobalt Canal Brewing, Northbank Landscape Co.). Each one is clearly tagged "Concept project" on the card and in the lightbox, and the section intro says client work is coming soon. Swap them out for real client work as you get it.
 
 1. **Prepare each image**
    - Shape: **4:3 landscape** looks best in the grid (other shapes are cropped to fit on the grid but shown whole in the lightbox).
@@ -77,10 +77,24 @@ You can do every change below right in your browser:
 
 ---
 
+## Current prices & what's included
+
+| Service | Price | Includes |
+|---|---|---|
+| Business listing setup | $50 | Google Business Profile, Yelp & Tripadvisor: hours, services/menu, description and photos added or updated. Client keeps ownership; Google may require the owner to verify. |
+| Flyer, menu & print design | $60 | 1 flyer, poster or one-page menu (front & back), unlimited small revisions, print-ready PDF + web/social image |
+| Social media graphics pack | $75 | 6 custom post designs, feed + story sizes for Instagram & Facebook, editable Canva templates, unlimited small revisions |
+| Logo refresh | $90 | 2 refreshed directions, unlimited small revisions, color / black & white / white versions, PNG, JPG, SVG & PDF |
+| New logo + brand kit | $175 | 3 initial concepts; main logo, alternate layout & icon; color palette, font pairing & 1-page brand guide; business card design; all file formats |
+| Monthly social media graphics | $200/mo | 12 custom posts a month (about 3/week) around promos, specials & holidays; feed + story sizes; one monthly batch; unlimited small revisions |
+| Small business website | $250 | Up to 4 pages, mobile-friendly, working contact form, basic Google SEO, free hosting set up (domain ~$10–12/yr not included) |
+
+These were set against 2025–26 market rates for newer freelancers competing on price (Fiverr flyers ~$35–80, beginner logos ~$20–100, marketplace logo + brand kits ~$165–270, monthly social retainers ~$200–400). Adjust them anytime.
+
 ## Edit prices and text
 
-- **Prices:** open `index.html`, search for `card__price`. Each service card has a line like `<p class="card__price">$150</p>`. Change the number.
-  Also update the matching option in the contact form (search for `f-service`) and, optionally, the `"price"` values in the JSON-LD block near the top (that's what Google reads).
+- **Prices:** open `index.html`, search for `card__price`. Each service card has a line like `<p class="card__price">$90</p>`. Change the number. The "what's included" bullets are the `<li>` lines inside `<ul class="card__list">` on the same card.
+  Also update the matching option in the contact form (search for `f-service`) and the `"price"` values in the JSON-LD block near the top (that's what Google reads).
 - **Any other text** (headline, FAQ answers, about blurb): open `index.html` and edit the words between the tags. Each section is marked with a big comment like `<!-- ===== 2. SERVICES & PRICING ===== -->`.
 - **Accent color:** `css/styles.css`, top of the file: `--accent` (buttons) and `--accent-text` (blue text). Keep enough contrast with black.
 
@@ -171,7 +185,7 @@ DNS can take from minutes up to 24 hours. Back in **Settings → Pages**, wait u
 ./scripts/set-site-url.sh https://www.yourdomain.com
 git commit -am "Use custom domain" && git push
 ```
-Then submit `https://www.yourdomain.com/sitemap.xml` in Google Search Console (free) and add the site to your **Google Business Profile**, the biggest win for "graphic designer Niagara Falls" searches.
+Then submit `https://www.yourdomain.com/sitemap.xml` in Google Search Console (free) and add the site to your **Google Business Profile**, which helps people find you when they search for "freelance graphic designer" or "graphic designer near me".
 
 ---
 

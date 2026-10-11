@@ -428,3 +428,12 @@ body.lb-open { overflow: hidden; }
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
 }
 .gallery__tag--inline { position: static; display: inline-block; vertical-align: middle; margin-right: 6px; background: var(--accent); border-color: var(--accent); }
+
+/* What's included list on service cards */
+.card__list { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); display: grid; gap: 10px; font-size: .92rem; color: #d1d1d6; flex: 1; }
+.card__list li { display: flex; gap: 10px; align-items: flex-start; line-height: 1.45; }
+.card__list li::before {
+  content: ""; width: 16px; height: 16px; flex: none; margin-top: 2px;
+  background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%235b8cff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.card__desc { flex: 0; }

@@ -32,7 +32,7 @@ h1 span{color:#5b8cff}
 OG_HTML = """<div class="wrap"><div class="glow"></div>
 <div class="top"><span class="mark">JCP</span>JCP Graphic Design</div>
 <h1>Design that makes small businesses <span>look&nbsp;big.</span></h1>
-<div class="bottom"><span>Graphic designer &middot; Niagara Falls, NY</span><span>Logos &middot; Menus &middot; Social &middot; Web</span></div></div>"""
+<div class="bottom"><span>Freelance graphic design for small businesses</span><span>Logos &middot; Menus &middot; Social &middot; Web</span></div></div>"""
 
 ICON_HTML = """<div style="width:512px;height:512px;display:grid;place-items:center;background:{bg};border-radius:{r}px">
 <div style="font:700 {fs}px/1 SG;letter-spacing:-0.04em;color:#fff">JCP</div></div>"""
