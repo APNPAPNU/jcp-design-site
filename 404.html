@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | JCP Graphic Design</title>
+  <meta name="description" content="This page doesn't exist. Head back to JCP Graphic Design, graphic designer in Niagara Falls, NY.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0a0a0a">
+  <!-- GitHub Pages serves this file for ANY missing URL (even /a/b/c), so relative
+       links would break. This small script points links at the site root instead. -->
+  <script>
+    (function () {
+      var p = location.pathname, root = "/";
+      var m = p.match(/^\/[^\/]+\//); // project site: /jcp-design-site/...
+      if (location.hostname.slice(-10) === ".github.io" && m) root = m[0];
+      document.write('<base href="' + root + '">');
+    })();
+  </script>
+  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="simple">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div>
+      <p class="eyebrow">Error 404</p>
+      <h1>Lost the <span class="accent">plot.</span></h1>
+      <p>This page doesn&rsquo;t exist, but your next great design could. Let&rsquo;s get you back on track.</p>
+      <a class="btn btn--primary" href="./">Back to the homepage</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://apnpapnu.github.io/jcp-design-site/sitemap.xml
