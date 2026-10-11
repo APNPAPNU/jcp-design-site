@@ -448,3 +448,4 @@ body.lb-open { overflow: hidden; }
 .card__tag--addon { background: transparent; border: 1px solid var(--accent-text); color: var(--accent-text); }
 .hero .eyebrow { align-items: flex-start; }
 .hero .eyebrow::before { margin-top: .3em; }
+@media (max-width: 999px) { .card--wide .card__title { margin-top: 28px; } }
