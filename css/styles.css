@@ -237,8 +237,8 @@ html:not(.js) .nav__toggle { display: none; }
 .gallery__btn img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .8s var(--ease), opacity .4s; }
 .gallery__btn:hover img, .gallery__btn:focus-visible img { transform: scale(1.04); }
 .gallery__meta {
-  position: absolute; inset: auto 0 0 0; padding: 48px 22px 20px;
-  background: linear-gradient(transparent, rgba(0,0,0,.82));
+  position: absolute; inset: auto 0 0 0; padding: 72px 22px 20px;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.62) 38%, rgba(0,0,0,.9));
   display: flex; flex-direction: column; gap: 2px;
 }
 .gallery__cat { font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #c7d6ff; }
