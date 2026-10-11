@@ -28,7 +28,8 @@ jcp-design-site/
 ├── .nojekyll               ← tells GitHub Pages to serve files as-is
 └── scripts/
     ├── set-site-url.sh     ← swaps the site address everywhere (for a custom domain)
-    └── generate-assets.py  ← regenerates og-image, icons, placeholders (optional)
+    ├── generate-assets.py  ← regenerates og-image + icons (optional)
+    └── generate-concepts.py← regenerates the 6 concept portfolio mockups (optional)
 ```
 
 ---
@@ -45,22 +46,31 @@ You can do every change below right in your browser:
 
 ## Swap in your portfolio images (step by step)
 
+**Right now** the gallery shows 6 **concept projects** for *fictional* local businesses (Brew & Falls Coffee, Ironwood Slice Co., Gorge & Grain Barber Co., Sugar Mist Bakery, Cobalt Canal Brewing, Northbank Landscape Co.). Each one is clearly tagged "Concept project" on the card and in the lightbox, and the section intro says client work is coming soon. Swap them out for real client work as you get it.
+
 1. **Prepare each image**
    - Shape: **4:3 landscape** looks best in the grid (other shapes are cropped to fit on the grid but shown whole in the lightbox).
-   - Size: **1200 × 900 px** (or 1600 × 1200 for extra-sharp zoom).
-   - Format: **.webp** (smallest) or **.jpg**. Aim for **under ~200 KB** each. Free tool: https://squoosh.app (choose WebP, quality ~80).
+   - Size: **1600 × 1200 px** (1200 × 900 is fine too).
+   - Format: **.webp** (smallest) or **.jpg**. Aim for **under ~300 KB** each. Free tool: https://squoosh.app (choose WebP, quality ~80).
    - Name: lowercase with dashes, no spaces, e.g. `bills-pizza-menu.webp`.
 2. **Upload** them into `images/portfolio/`.
-3. **Edit `js/portfolio.js`**. Each line is one project:
+3. **Edit `js/portfolio.js`**. Each `{ ... }` block is one project:
    ```js
-   { file: "bills-pizza-menu.webp", title: "Bill's Pizza menu", category: "Restaurant menu",
-     alt: "Two-page takeout menu design for Bill's Pizza in Niagara Falls", width: 1200, height: 900 },
+   {
+     file: "bills-pizza-menu.webp",
+     title: "Bill's Pizza \u2014 Menu design",
+     category: "Menu design",
+     alt: "Two-page takeout menu design for Bill's Pizza in Niagara Falls",
+     width: 1600, height: 1200
+   },
    ```
    - `file` must match the file name exactly (capitals matter).
    - `alt` = a short description of the image (helps blind visitors and Google).
    - `width`/`height` = the image's real pixel size.
-   - The order of lines = order on the page. Keep the commas between lines.
-4. **Delete** the `placeholder-*.webp` lines (and files) once your real work is in.
+   - **Real client work: leave out `concept: true`.** That line is what adds the "Concept project" tag.
+   - The order of blocks = order on the page. Keep the commas between blocks.
+4. **Remove a concept**: delete its block in `js/portfolio.js` and its image file. When all six are gone, change the portfolio intro text in `index.html` (search for "Concept projects showing").
+5. To tweak or re-render the concepts: `python scripts/generate-concepts.py` (needs Playwright + Pillow; set `CHROME_PATH` to use an installed Chrome).
 
 ### Your portrait
 `images/about/jonathan-pettit.webp` and `.jpg` (880 × 1100, 4:5, metadata stripped). To replace, upload new files with the same names and size ratio.

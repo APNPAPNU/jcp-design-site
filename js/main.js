@@ -53,7 +53,7 @@
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "gallery__btn";
-      btn.setAttribute("aria-label", "View larger: " + item.title + " (" + item.category + ")");
+      btn.setAttribute("aria-label", "View larger: " + item.title + " (" + (item.concept ? "concept project, " : "") + item.category + ")");
       btn.dataset.index = String(i);
 
       var img = document.createElement("img");
@@ -72,6 +72,13 @@
       meta.lastChild.textContent = item.title;
 
       btn.appendChild(img);
+      if (item.concept) {
+        var tag = document.createElement("span");
+        tag.className = "gallery__tag";
+        tag.setAttribute("aria-hidden", "true");
+        tag.textContent = "Concept project";
+        btn.appendChild(tag);
+      }
       btn.appendChild(meta);
       li.appendChild(btn);
       frag.appendChild(li);
@@ -93,10 +100,12 @@
     lbImg.alt = it.alt || it.title;
     lbImg.width = it.width || 1600;
     lbImg.height = it.height || 1200;
-    lbCap.innerHTML = "<strong></strong> &middot; <span></span> <span class='sr-only'></span>";
-    lbCap.children[0].textContent = it.title;
-    lbCap.children[1].textContent = it.category;
-    lbCap.children[2].textContent = "(" + (current + 1) + " of " + items.length + ")";
+    lbCap.innerHTML = (it.concept ? "<span class='gallery__tag gallery__tag--inline'>Concept project</span> " : "") +
+      "<strong></strong> &middot; <span></span> <span class='sr-only'></span>";
+    var off = it.concept ? 1 : 0;
+    lbCap.children[off].textContent = it.title;
+    lbCap.children[off + 1].textContent = it.category;
+    lbCap.children[off + 2].textContent = "(" + (current + 1) + " of " + items.length + ")";
   }
   function openLb(i) {
     if (!lb || typeof lb.showModal !== "function") {

@@ -418,3 +418,13 @@ body.lb-open { overflow: hidden; }
 }
 .about__copy { display: grid; gap: 16px; color: var(--muted); font-size: clamp(1.02rem, .6vw + .8rem, 1.15rem); max-width: 56ch; }
 .about__copy strong { color: var(--text); font-weight: 600; }
+
+/* "Concept project" tag on portfolio cards + lightbox caption */
+.gallery__tag {
+  position: absolute; top: 16px; left: 16px; z-index: 1;
+  font: 600 .72rem/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase;
+  color: #fff; background: rgba(10, 10, 10, .78); border: 1px solid rgba(255, 255, 255, .22);
+  padding: 7px 10px; border-radius: 999px;
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.gallery__tag--inline { position: static; display: inline-block; vertical-align: middle; margin-right: 6px; background: var(--accent); border-color: var(--accent); }
